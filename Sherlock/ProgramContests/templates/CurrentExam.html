@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+{%block titlecontent%}
+"Select the exam from below"
+{%endblock%}
+{%block links%}
+<!-- This block is to dynamically include top navigation -->
+<ul id="navigation">
+       <td> <li ><a href="/user/home">Home</a></li></td>
+        <td><li ><a href="/user/logout/">Logout</a></li></td>
+</ul>
+{%endblock%}
+
+<!-- This block is to dynamically include sidebar navigation -->
+{%block sidebar%} 
+
+     <a href="/user/TakeExam/">Take Exam</a>
+     <a href="/user/CurrentExam/">Current Contests</a>
+     <a href="/user/Participation/">Participation History</a>
+
+{%endblock%}
+
+<!-- This block is to dynamically include main bar contents -->
+{%block content%}
+        <h3></h3>
+         <table bgcolor="#092E20" style="color:white">
+        	<tr><td><b><center>Contest Name</center></b></td><td><b><center>Type</center></b></td><td><b><center>Starts On</center></b></td><td><b><center>Ends On</center></b></td></tr>
+        
+        <form  method="POST" name="Contest" action="/user/CurrentExam/" enctype="multipart/form-data">
+       	{% csrf_token %}
+       	            
+            {% for row in contest_var %}
+        	
+        	<tr accesskey="row"><td><a style="color:white" name="link" value="hi" href="/user/TakeExam/Instructions/?name={{row.contestName}}" onclick="this.form.submit()" >{{ row.contestName }}</a>
+        		<td>{{row.contestType }}</td><td>{{ row.startTime }}</td><td>{{ row.endTime }}</td> 
+        	</tr
+        	
+        	{% endfor %}
+        </table>
+        </form>
+{%endblock%}

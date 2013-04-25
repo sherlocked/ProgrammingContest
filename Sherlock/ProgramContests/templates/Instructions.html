@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+{%block links%}
+<!-- This block is to display the name of the contest -->
+
+
+ 
+<ul id="navigation">
+         <li ><a href="/user/home">Home</a></li>
+       <li ><a href="/user/logout/">Logout</a></li>
+</ul>
+{%endblock%}
+<h2 style="color:white"> {{ contest.contestName }} </h2>
+
+
+<!-- This block is to dynamically include sidebar navigation -->
+{%block sidebar%} 
+
+{%endblock%}
+
+<!-- This block is to dynamically include main bar contents -->
+{%block content%}
+
+        <form method="post" action="/user/TakeExam/Instructions/ShowQuestions/" name="Instructionform" enctype="multipart/form-data">
+        	{% csrf_token %}
+        <h2>welcome to {{contest.contestName}} </h2>
+        <p> 
+        Its an {{contest.contestType}}.
+        The contest will start at :{{contest.startTime}}
+        the contest will end at :{{contest.endTime}}
+        Rules are as follows:
+        {{contest.rules}}
+        </p>
+        <input type="submit" name = "hi" value="Start {{contest.contestName}}" />
+        <input type="button" name="Exit" value="Exit"/>
+        </form>
+{%endblock%}

@@ -1,0 +1,45 @@
+{%extends "base.html"%}
+{%block links%}
+<!-- This block is to dynamically include top navigation -->
+<ul id="navigation">
+       <td> <li ><a href="/user/home">Home</a></li></td>
+        <td><li ><a href="/user/logout/">Logout</a></li></td>
+</ul>
+{%endblock%}
+
+<!-- This block is to dynamically include sidebar navigation -->
+{%block sidebar%} 
+
+     <a href="/user/check">Edit Profile</a>
+     <a href="/user/TakeExam">Take Contest</a>
+     <a href="/user/CurrentExam/">Current Contests</a>
+     <a href="/user/Participation/">Participation History</a>
+
+{%endblock%}
+
+<!-- This block is to dynamically include main bar contents -->
+{%block content%}
+       
+        <h2>welcome {{username}}</h2>
+        <!--form name="fileForm" method="post" action="/user/FileUpload/" enctype="multipart/form-data" -->
+        {% csrf_token %}
+        
+        <table>
+            {% for row in form %}
+            
+        	<tr> <form action="/user/FileUpload/" method="post" enctype="multipart/form-data">
+        	    {% csrf_token %}
+        	    <td>&nbsp;&nbsp;{{row.questionId}}</td>
+        	    <td style="visibility: none"><input type="hidden" name="question" value="{{row.questionId}}"/></td>
+        	     <td>{{docForm.lang_used}}</td>
+        	     <td>{{docForm.fileField.label_tag}}</td>
+        	    <td>{{docForm.fileField}}</td>
+        	    <td><input type="submit" name="FileSubmit"/></td>
+        	</form>
+        	</tr>
+        	
+        	{%endfor%}
+        </table>
+  
+        
+{%endblock%}

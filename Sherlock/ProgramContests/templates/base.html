@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{%block titlecontent%}{%endblock%}</title>
+        <style>
+  .bodyclass {margin: 0px 100px 0px 100px;
+                        background-color: #94DA3A}
+             #header {
+                             margin: 10px;
+                             width: 111px;
+                             height: 10px;
+                            font-family: Arial, Helvetica, sans-serif;
+                             font-size: 40;
+                            color:white;
+                           }    
+             #div2   {
+                            margin: 30px 0px 0px 0px;
+                            }
+             #navigation {    
+                            margin: 2px;
+                            
+                            display:block;
+                            font-family: "Trebuchet MS",sans-serif;
+                            white-space: nowrap;
+                            }
+             .div1       {
+                            height: 40px;
+                            background: #092E20;
+                        }
+             
+            #navigation li {
+                                display:block;
+                                float:left;
+                                list-style-type:none;
+                                margin:0;
+                                padding:0;
+                                color:#94DA3A;
+                            }
+            #navigation a {
+                                display:block;
+                                text-decoration: none;
+                                float:right;                                
+                                padding:5px 16px 10px 16px;
+                                background:#092e20;
+                                color: white;
+                                }
+                                      
+            #navigation a:hover {
+                                    color:white;
+                                    background:#234f32;
+                                }
+                 #sidebar a {
+                                text-decoration: none;
+                                display:block;
+                                color:white;
+                                padding:2px 16px 10px 16px;
+
+                            }
+               #sidebar  a:hover {
+                              color:white;
+                              background:#234f32;
+                            }
+               ul, menu, dir {
+                                display: block;
+                                list-style-type: disc;
+                                -webkit-margin-before: 1em;
+                                -webkit-margin-radius: 5px;
+                                -webkit-margin-after: 1em;
+                                -webkit-margin-start: 0px;
+                                -webkit-margin-end: 0px;
+                                -webkit-padding-start: 600px;
+                                white-space: nowrap;
+                               }
+                #sidebar{
+                            overflow: hidden;
+                            float: left;
+                            margin-bottom: 60px;
+                            width: 200px;
+                            background:#092E20;
+                            font-family: "Trebuchet MS",sans-serif;
+                            color: white;
+                    }
+                  #mainbar{
+                      float: right;
+                      margin-bottom: 40px;
+                      width: 900px;
+                      height:400px;
+                      border-width: 3px;
+                      border-color: #FFFFFF;
+                  }
+                  #formStyle {
+                      
+                      font-family: "Trebuchet MS",sans-serif;
+                      color:#FFFFFF;
+                      
+                  }
+                
+        </style>
+    </head>
+    <body class="bodyclass">
+        <div class="div1">
+            <h1 id="header">InQuiZite</h1>
+        </div>
+        <!-- This block is to specify the top links for navigation-->
+        <div class="div1">
+            
+            {%block links%}
+            {%endblock%}
+        </div>
+        <br/>
+        <!-- This block is to specify the sidebar links-->
+        <div id="sidebar">
+            {%block sidebar%}
+            {%endblock%}
+        </div>
+        <!-- This block is to specify the general dynamic content data-->
+        <div id="mainbar">
+             
+        {%block content%}
+        
+        {%endblock%}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+{%extends "base.html"%}
+{%block title%}
+USER CREATION SUCCESS
+{%endblock%}
+{%block links%}
+<!-- This block is to dynamically include top navigation -->
+<ul id="navigation">
+        <li ><a href="/user/check">Home</a></li>
+        <li ><a href="https://www.djangoproject.com/download/">Competitions</a></li>
+        <li ><a href="https://www.djangoproject.com/weblog/">Logout</a></li>
+</ul>
+{%endblock%}
+<!-- This block is to dynamically include sidebar navigation -->
+{%block sidebar%} 
+
+     <a href="/user/check">Edit Profile</a>
+     <a href="https://www.djangoproject.com/download/">Participation History</a>
+
+{%endblock%}
+{%block content%}
+<form name="EditProfileForm" method="post" action="/user/editprofile/">
+<h2> user successfully created</h2>
+{%csrf_token%}
+<table bgcolor="#092E20" style="white-space: nowrap">
+                <tr style="display:none" ><td>{{form.username.label_tag}}</td><td>{{form.username}}</td></tr>                
+               <tr><td>{{form.first_name.label_tag}}</td><td>{{form.first_name}}</td></tr>
+               <tr><td>{{form.last_name.label_tag}}</td><td>{{form.last_name}}</td></tr>
+               <tr style="display:none"><td>{{form.email.label_tag}}</td><td>{{form.email}}</td></tr>
+                <tr><td>{{form.password1.label_tag}}</td><td>{{form.password1}}</td></tr>
+                <tr><td>{{form.password2.label_tag}}</td><td>{{form.password2}}</td></tr>
+               
+            </table>
+<input type="submit" value="Edit Profile" />
+</form>
+{%endblock%}

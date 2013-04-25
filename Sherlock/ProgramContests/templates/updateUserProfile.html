@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+{%block links%}
+<!-- This block is to dynamically include top navigation -->
+<ul id="navigation">
+       <td><li ><a href="/user/logout/">Logout</a></li></td>
+</ul>
+{%endblock%}
+
+<!-- This block is to dynamically include sidebar navigation -->
+{%block sidebar%} 
+
+     <a href="/user/check/">Edit Profile</a>
+     <a href="https://www.djangoproject.com/download/">View Competitons</a>
+
+{%endblock%}
+
+{%block content%}
+<h2>editing {{user}}</h2>
+
+<form name="updateProfile" action="/user/updateUser/" method="post">
+    {%csrf_token%}
+{{form.as_p}}
+<input type="submit" value="submitUpdateForm"/>
+</form>
+{%endblock%}

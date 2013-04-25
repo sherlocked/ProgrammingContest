@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+{%block titlecontent%}
+"WELCOME TO OPERATION SHERLOCK"
+{%endblock%}
+{%block content%}
+</p>{{status}}</p>
+    {%if form.errors %}
+        <p>Your username and password didnt match</p>
+    {%endif%}
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Log in to the portal</h3>
+    <!--form method="post" action = "{%url django.contrib.auth.views.login%}"-->
+        <!--form method="post" action = ""-->
+        <form method="post" action = "/user/check/">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{form.username.label_tag}}</td>
+                <td>{{form.username}}</td>
+            </tr>
+            <tr><td>{{form.password.label_tag}}</td>
+                <td>{{form.password}}</td>
+            </tr>
+            <tr><td><input type="submit" value="login" /></td></tr>
+            <tr><td><a href="/user/create" > New User ? Sign Up.</a></td></tr>
+            <tr><td><a href="/user/create" > Forgot Password? </a></td></tr>
+            </table>
+            
+            </form>
+ {%endblock%}

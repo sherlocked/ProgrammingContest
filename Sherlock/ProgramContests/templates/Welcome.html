@@ -1,0 +1,24 @@
+{%extends "base.html"%}
+{%block links%}
+<!-- This block is to dynamically include top navigation -->
+<ul id="navigation">
+       <li ><a href="/user/logout/">Logout</a></li>
+</ul>
+{%endblock%}
+
+<!-- This block is to dynamically include sidebar navigation -->
+{%block sidebar%} 
+
+
+     <a href="/user/check">Edit Profile</a>
+     <a href="/user/TakeExam">Take Contest</a>
+     <a href="/user/CurrentExam/">Current Contests</a>
+     <a href="/user/Participation/">Participation History</a>
+
+{%endblock%}
+
+<!-- This block is to dynamically include main bar contents -->
+{%block content%}
+        <h2>welcome {{form.username}}</h2><br />
+        <h3>Please make use of the side bar for your taking part in competitons</h3>
+{%endblock%}

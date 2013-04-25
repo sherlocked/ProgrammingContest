@@ -1,0 +1,80 @@
+#OPERATION SHERLOCK
+#AUTHOR HARISH BABU ARUNACHALAM
+#DATE - 28TH NOVEMBER 2012
+
+PREREQUISITES / PROCEDURES
+--------------------------
+1. INSTALL PYTHON 64 BIT 2.7
+		- http://www.python.org/getit/
+		(*) after installation add the python installation path to CLASSPATH environment variable
+		
+2. INSTALL MySQL WORKBENCH
+		- http://dev.mysql.com/downloads/workbench/
+		
+3. INSTALL LATEST VERSION OF DJANGO FROM THE WEBSITE 
+		- https://www.djangoproject.com/download/
+		(*) Procedure for importing django into python/lib/site-packages directory.
+			a) goto django download folder
+			b) open command line and type 'python setup.py install' without quotes.
+			c) once finished goto /python/lib/site-packages/ directory to check for djangao folder.
+		(*) open command line
+			a) type python
+			b) type 'import django'
+			c) next line type 'django.get_version()' to check the version and if it has installed properly.
+			 
+			 
+4. INSTALL PYTHON X LIBRARIES FOR INTERFACING 'PYTHON' AND 'MYSQL'
+		- http://sourceforge.net/projects/python-xlib/
+		- import MySQLdb APIs from python X libraries into /python/lib/site-packages/
+		- check for the presence of the folder mysql inside the above folder.
+		
+5. INSTALL APTANA STUDIO 3 FOR WORKING ON PYTHON-MYSQL-DJANGO
+_______________________________________________________________________________________________________________________________
+-------------------------------------------------------------------------------------------------------------------------------
+STARTING WITH THE PROJECT - OPERATION SHERLOCK
+----------------------------------------------
+
+1) Open Aptana Studio 3
+2) under windows-> preferences -> python interpreter => configure the python interpreter path
+3) New -> Project -> (expand) Pydev Project -> new Django Project
+4) give 'Sherlock' in the project name
+5) configure Database
+	a) Name : MySQL
+	b) Database Name : ProgramContests
+	c) Host : 127.0.0.1
+	d) username : root
+	e) password : root
+6) click Finish to create a project with the following details and files
+	- Sherlock
+		__init__.py file (to say that this should be considered as a package folder)
+		settings.py file (to hold the settings of the project namely - templates, admin configurations, database configs, media URLs,)
+		urls.py file (contains the general URL configurations for the application)
+		wsgi.py file (contains details about Web Server Gateway Interface configuration)
+	- Manage.py (contains lot of inbuilt django commands which can be made use of)
+	- Python (python interpreter installation path)
+	
+7) MAKING CHANGES TO GLOBAL 'URLS.PY' FILE
+	- uncomment the line that imports 'admin'
+	- uncomment the line that says admin.autodiscover()
+	- uncomment the last line in the file to enable admin site in django web administration
+
+8) MAKING CHANGES TO SETTINGS.PY FILE
+	- in 'INSTALLED_APPS' variable, change the following
+		*) enable 'django.contrib.admin', and 'django.contrib.admindocs', and add the following line
+			'ProgramContest' 
+		*) this is to enable admin configuration and create a Database called 'ProgramContests' with the models configured in    	 Models.py file.
+		
+9) CREATING SOURCE FOLDER STRUCTURES FOR SHERLOCK PROJECT
+	- Right click Sherlock package folder -> new PyDev package
+	- give Sherlock.ProgramContests in the text field.
+	- create the following files inside ProgramContests folder
+		*) New PyDev Module file Admin.py
+		*) models.py (to contain models that are in sync with the Database tables)
+		*) urls.py (to contain page specific URL redirection commands)
+		*) views.py (to contain methods for different pages rendering)
+		*) __init__.py is already created to specify that its a package folder.
+	- create the folder 'templates' under ProgramContests folder
+		*) templates folder will contain all the static/ design elements like HTML, XML, CSS and JS if any.
+	- create a package called 'contestlogic' under Sherlock.ProgramContests package
+		*) 'contestlogic' will contain the python files for different logic implementation.
+	

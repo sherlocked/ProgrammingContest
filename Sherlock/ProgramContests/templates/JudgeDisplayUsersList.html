@@ -1,0 +1,39 @@
+{%extends "base.html"%}
+
+<!-- This block is to dynamically include top navigation -->
+{%block links%}
+<ul id="navigation">
+        <li ><a href="/user/check">Home</a></li>
+        <li ><a href="/user/logout/">Logout</a></li>
+</ul>
+{%endblock%}
+
+<!-- This block is to dynamically include sidebar navigation -->
+{%block sidebar%} 
+
+     <a href="/user/judge/home/">Home</a>
+     <a href="https://www.djangoproject.com/download/">View Competitons</a>
+
+{%endblock%}
+
+<!-- This block is to dynamically include main bar contents -->
+{%block content%}
+        <h2>The following users are assigned to you</h2><br />
+        <div>
+            
+            <table bgcolor="#092E20" id="formStyle"  >
+                <tr><td><b>USER</b></td><td><b>Contest Name</b></td><td></td><td>Score</td></tr>
+            {%for evalObj in ContestPart%}
+                <tr><form name="evaluateForm" action="/user/judge/updateUserScore/" method="post">{%csrf_token%}
+                    <td>{{evalObj.compId}}</td><td>{{evalObj.contestQuestionId}}</td>
+                    <td><input type="submit" value="View Code" name="{{evalObj.id}}"/></td>
+                    <td style="visibility: none"><input type="hidden" name="contPartId" value="{{evalObj.id}}" /></td>
+                    <td style="visibility: none"><input type="hidden" name="userName" value="{{evalObj.compId}}" /></td>
+                      </form>
+                </tr>
+            {%endfor%}
+        </table>
+        </div>
+        
+            
+{%endblock%}

@@ -1,0 +1,24 @@
+{%extends "base.html"%}
+{%block title%}
+Profile edited successfully!!
+{%endblock%}
+{%block links%}
+<!-- This block is to dynamically include top navigation -->
+<ul id="navigation">
+        <li ><a href="/user/check">Home</a></li>
+        <li ><a href="/user/logout/">Logout</a></li>
+</ul>
+{%endblock%}
+<!-- This block is to dynamically include sidebar navigation -->
+{%block sidebar%} 
+
+     <a href="/user/check">Edit Profile</a>
+     <a href="https://www.djangoproject.com/download/">Participation History</a>
+
+{%endblock%}
+{%block content%}
+
+<h2> profile edited successfully</h2>
+{%csrf_token%}
+
+{%endblock%}

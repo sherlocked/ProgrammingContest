@@ -1,0 +1,16 @@
+{%extends "base.html"%}
+{%block content%}
+<h1>Contest : {{contestName}}</h1>
+<h2>Question: {{question}}</h2>
+<h3>User : {{userName}}</h3>
+
+<form method="post" action="/user/judge/updateUserVal/">
+    {%csrf_token%}
+    <input type="hidden" name="contPartID" value="{{contPartObj.id}}"/>
+    <input type="text" name="score"/>
+    <input type="submit" name="submitButton"/>
+<textarea name="fileDisplay">
+    {{data}}
+</textarea>
+</form>
+{%endblock%}

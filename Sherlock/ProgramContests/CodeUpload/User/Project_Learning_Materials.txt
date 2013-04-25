@@ -1,0 +1,55 @@
+1. Apptana Studio 3
+2. PyDev + Eclipse
+3. MySQL installation
+4. MySQLdb required
+
+
+http://www.youtube.com/watch?v=8bnyOb72p_4&feature=BFa&list=PL385A53B00B8B158E
+http://www.youtube.com/watch?v=hTq98PGOqMA&feature=autoplay&list=PL385A53B00B8B158E&playnext=1
+http://programmersbook.com/page/36/Full-Web-Framework-Python-Django-Tutorial-V-Blog---Create-First-View-and-Url-Pattern/
+
+http://www.youtube.com/watch?v=hTq98PGOqMA&feature=autoplay&list=PL385A53B00B8B158E&playnext=1
+
+how to create and operate on templates
+
+http://www.webmonkey.com/2010/02/use_templates_in_django/
+
+http://www.southampton.ac.uk/~re1u06/teaching/upgma/
+
+Admin page links
+----------------
+https://docs.djangoproject.com/en/dev/ref/contrib/admin/
+
+How to Sync models and DB
+-------------------------
+
+http://blog.yawd.eu/2011/using-aptana-studio-3-ide-django-applications-simp/
+
+How to code in django - __init__.py
+----------------------
+https://github.com/django/django/blob/master/django/db/backends/__init__.py
+
+WORKING WITH VIEWS IN THE MODEL
+-------------------------------
+https://docs.djangoproject.com/en/1.4/intro/tutorial03/
+
+CONTENTS FOR DJANGO 1.4 TUTORIAL - WEBSITE DEVELOPMENT
+------------------------------------------------------
+https://docs.djangoproject.com/en/1.4/contents/
+
+CONFIGURING THE DJANGO ADMIN SITE
+----------------------------------
+https://docs.djangoproject.com/en/dev/ref/contrib/admin/
+
+DESIGNING A MODEL IN DJANGO 1.4
+--------------------------------
+https://docs.djangoproject.com/en/1.4/intro/overview/#design-your-model
+
+
+
+
+
+CREATING USER PROFILE IN DJANGO
+--------------------------------
+
+http://stackoverflow.com/questions/9046533/creating-user-profile-pages-in-django
